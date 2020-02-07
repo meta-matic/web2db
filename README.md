@@ -3,5 +3,5 @@
 
 ### Quickstart:  
 
-`import web2db
+`import web2db  
 web2db.dump('data.db', urls)`
