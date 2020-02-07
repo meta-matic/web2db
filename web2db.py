@@ -57,7 +57,7 @@ if __name__ == '__main__':
         'https://www.producthunt.com/',
         'https://www.techradar.com/in'
     ]
-    # dump(sqlite3_file_path, urls)
+    dump(sqlite3_file_path, urls)
 
     # Validate
     conn = sqlite3.connect(sqlite3_file_path)
