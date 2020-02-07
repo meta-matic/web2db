@@ -11,3 +11,9 @@ web2db.dump('data.db', urls=[
     'https://www.msn.com'
 ])
 ```
+
+
+### Features:
+- Resumable webpage fetching
+- Saves to local SQLITE3 DB
+- tqdm progress bar
