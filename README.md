@@ -5,6 +5,9 @@ Fetches the full text of input URLs and persists them to sqlite3 DB file.
 Fetching is resumable and comes with a progressbar.  
 
 
+### Install:  
+```pip install web2db```
+
 
 ### Quickstart:  
 
