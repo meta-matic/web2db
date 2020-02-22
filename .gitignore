@@ -1,3 +1,6 @@
 *.db
 venv
 __pycache__
+build
+dist
+web2db.egg-info
