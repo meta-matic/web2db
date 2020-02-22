@@ -47,6 +47,12 @@ def dump(
         time.sleep(1)
 
 
+def to_df(sqlite3_file_path):
+    conn = sqlite3.connect(sqlite3_file_path)
+    return pd.read_sql_query('''SELECT * FROM WebPages;''', conn)
+
+
+
 if __name__ == '__main__':
     # Dump
     sqlite3_file_path = 'tech_news_data.db'
@@ -60,7 +66,6 @@ if __name__ == '__main__':
     dump(sqlite3_file_path, urls)
 
     # Validate
-    conn = sqlite3.connect(sqlite3_file_path)
-    df = pd.read_sql_query('''SELECT * FROM WebPages;''', conn)
+    df = to_df(sqlite3_file_path)
     print(df.shape)
     print(df)

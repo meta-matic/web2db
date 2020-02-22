@@ -1,4 +1,3 @@
 requests
 pandas
-sqlite3
 tqdm
