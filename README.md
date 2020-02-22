@@ -20,6 +20,15 @@ web2db.dump('data.db', urls=[
 ])
 ```
 
+Query the DB file:
+```python
+conn = sqlite3.connect(sqlite3_file_path)
+df = pd.read_sql_query('''SELECT * FROM WebPages;''', conn)
+print(df)
+...
+```
+
+
 
 ### Features:
 - Resumable webpage fetching
