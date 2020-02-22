@@ -22,12 +22,14 @@ web2db.dump('data.db', urls=[
 
 Query the DB file:
 ```python
-conn = sqlite3.connect(sqlite3_file_path)
-df = pd.read_sql_query('''SELECT * FROM WebPages;''', conn)
+df = web2db.to_df(sqlite3_file_path)
+print(df.shape)
 print(df)
-...
 ```
 
+### SQL Schema:  
+- Table:  
+	- WebPages:  (url text, fulltext text)  
 
 
 ### Features:
