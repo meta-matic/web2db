@@ -33,7 +33,7 @@ def dump(
         urls = pd.read_csv(urls_file_csv)[urls_column_name]
 
     # For each URL
-    for idx in trange(len(urls), initial=idx_resume):
+    for idx in trange(idx_resume, len(urls)):
         # Fetch full text
         url = urls[idx]
         response = s.get(url)
