@@ -15,7 +15,7 @@ def dump(
     conn = sqlite3.connect(sqlite3_file_path)
     conn.execute('''
         CREATE TABLE IF NOT EXISTS WebPages
-        (url text, fulltext text);
+        (url text, fulltext text, http_status_code int);
     ''')
     conn.commit()
 
@@ -37,12 +37,13 @@ def dump(
         # Fetch full text
         url = urls[idx]
         response = s.get(url)
+        status_code = response.status_code
         full_text = response.text
         # Persist WikiLink full text to DB
         conn.execute('''
             INSERT INTO WebPages VALUES
-            (?, ?);
-        ''', (url, full_text))
+            (?, ?, ?);
+        ''', (url, full_text, status_code))
         conn.commit()
         # Don't be evil!
         time.sleep(sleep_seconds)

@@ -29,7 +29,11 @@ print(df)
 
 ### SQL Schema:  
 - Table:  
-	- WebPages:  (url text, fulltext text)  
+	- > WebPages
+	
+	  | url  | fulltext | status_code |
+	  | ---- | -------- | ----------- |
+	  | text | text     | int         |
 
 
 ### Features:
