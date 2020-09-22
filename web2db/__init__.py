@@ -6,10 +6,11 @@ from tqdm import trange
 
 
 def dump(
-            sqlite3_file_path,
-            urls,
-            urls_file_csv=None, urls_column_name='url'):
-
+        sqlite3_file_path,
+        urls,
+        urls_file_csv=None,
+        urls_column_name='url',
+        sleep_seconds=1):
     # DB connection
     conn = sqlite3.connect(sqlite3_file_path)
     conn.execute('''
@@ -44,13 +45,12 @@ def dump(
         ''', (url, full_text))
         conn.commit()
         # Don't be evil!
-        time.sleep(1)
+        time.sleep(sleep_seconds)
 
 
 def to_df(sqlite3_file_path):
     conn = sqlite3.connect(sqlite3_file_path)
     return pd.read_sql_query('''SELECT * FROM WebPages;''', conn)
-
 
 
 if __name__ == '__main__':
@@ -63,7 +63,7 @@ if __name__ == '__main__':
         'https://www.producthunt.com/',
         'https://www.techradar.com/in'
     ]
-    dump(sqlite3_file_path, urls)
+    dump(sqlite3_file_path, urls, sleep_seconds=5)
 
     # Validate
     df = to_df(sqlite3_file_path)
