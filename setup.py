@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='web2db',
-    version='0.1.4',
+    version='0.1.5',
     description='Fetch webpage full-text, persist link and full text to SQLITE3 db, resumable with tqdm progressbar.',
     long_description=long_description,
     long_description_content_type="text/markdown",
