@@ -6,3 +6,4 @@ dist
 web2db.egg-info
 venv
 .idea
+*.sh
